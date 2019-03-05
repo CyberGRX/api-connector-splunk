@@ -21,7 +21,7 @@ modtime = 1551112645.072063000
 [inputs/thirdparty_cybergrx%3A%2F%2FThirdParties]
 owner = dean
 version = 7.2.4
-modtime = 1551112645.504010000
+modtime = 1551114175.566114000
 
 [cybergrx_api_connector_settings/additional_parameters]
 version = 7.2.4
@@ -35,9 +35,68 @@ modtime = 1551112745.020486000
 [passwords/credential%3A__REST_CREDENTIAL__%23api-connector-splunk%23data%2Finputs%2Fthirdparty_cybergrx%3AThirdParties%60%60splunk_cred_sep%60%601%3A]
 owner = splunk-system-user
 version = 7.2.4
-modtime = 1551112999.141756000
+modtime = 1551114175.113658000
 
 [passwords/credential%3A__REST_CREDENTIAL__%23api-connector-splunk%23data%2Finputs%2Fthirdparty_cybergrx%3AThirdParties%60%60splunk_cred_sep%60%602%3A]
 owner = splunk-system-user
 version = 7.2.4
-modtime = 1551112999.150180000
+modtime = 1551114175.133721000
+
+[api_connector_splunk_settings/additional_parameters]
+version = 7.2.4
+modtime = 1551114077.823024000
+
+[indexes/cybergrx]
+owner = dean
+version = 7.2.4
+modtime = 1551114142.780468000
+
+[props/ResidualRisk_GRX]
+owner = dean
+version = 7.2.4
+modtime = 1551306856.563077000
+
+[passwords/credential%3A__REST_CREDENTIAL__%23api-connector-splunk%23data%2Finputs%2Fgapsandremediations_cybergrx%3AGaps%60%60splunk_cred_sep%60%601%3A]
+owner = dean
+version = 7.2.4
+modtime = 1551373635.217980000
+
+[passwords/credential%3A__REST_CREDENTIAL__%23api-connector-splunk%23data%2Finputs%2Fgapsandremediations_cybergrx%3AGaps%60%60splunk_cred_sep%60%602%3A]
+owner = dean
+version = 7.2.4
+modtime = 1551373635.227841000
+
+[inputs/gapsandremediations_cybergrx%3A%2F%2FGaps]
+owner = dean
+version = 7.2.4
+modtime = 1551373635.668123000
+
+[props/GapsAndRemediations_GRX]
+owner = dean
+version = 7.2.4
+modtime = 1551376964.430924000
+
+[props/scores_cybergrx]
+owner = dean
+version = 7.2.4
+modtime = 1551805531.651744000
+
+[props/Scores_GRX]
+owner = dean
+version = 7.2.4
+modtime = 1551805759.981522000
+
+[passwords/credential%3A__REST_CREDENTIAL__%23api-connector-splunk%23data%2Finputs%2Fassessmentscore_grx%3AAssessmentScores%60%60splunk_cred_sep%60%601%3A]
+owner = dean
+version = 7.2.4
+modtime = 1551805873.854088000
+
+[passwords/credential%3A__REST_CREDENTIAL__%23api-connector-splunk%23data%2Finputs%2Fassessmentscore_grx%3AAssessmentScores%60%60splunk_cred_sep%60%602%3A]
+owner = dean
+version = 7.2.4
+modtime = 1551805873.862713000
+
+[inputs/assessmentscore_grx%3A%2F%2FAssessmentScores]
+owner = dean
+version = 7.2.4
+modtime = 1551805874.304212000

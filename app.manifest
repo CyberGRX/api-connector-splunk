@@ -5,11 +5,11 @@
     "id": {
       "group": null,
       "name": "api-connector-splunk",
-      "version": "1.0.0"
+      "version": "1.0.1"
     },
     "author": [
       {
-        "name": "",
+        "name": "Dean Kooiman",
         "email": null,
         "company": null
       }
