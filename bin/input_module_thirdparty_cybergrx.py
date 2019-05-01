@@ -55,4 +55,4 @@ def collect_events(helper, ew):
             event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(), sourcetype=helper.get_sourcetype(), data=json.dumps(company))
             ew.write_event(event)
             
-        time.sleep(1)
+        time.sleep(10)

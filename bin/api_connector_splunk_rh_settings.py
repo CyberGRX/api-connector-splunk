@@ -32,8 +32,8 @@ fields_additional_parameters = [
         encrypted=False,
         default='https://api.cybergrx.com',
         validator=validator.String(
-            max_len=8192, 
             min_len=0, 
+            max_len=8192, 
         )
     )
 ]

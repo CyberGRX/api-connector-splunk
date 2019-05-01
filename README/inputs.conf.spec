@@ -1,8 +1,8 @@
 [thirdparty_cybergrx://<name>]
 api_token = 
 
-[gapsandremediations_cybergrx://<name>]
+[assessmentscore_grx://<name>]
 api_token = 
 
-[assessmentscore_grx://<name>]
+[gapsandremediations_cybergrx://<name>]
 api_token =
