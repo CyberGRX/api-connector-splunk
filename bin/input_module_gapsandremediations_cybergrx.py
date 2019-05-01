@@ -83,5 +83,7 @@ def collect_events(helper, ew):
                 
             for risk in report_json.get("low_risks", []):
                 emit_risk(risk, company)
+                
+            time.sleep(5)
             
-        time.sleep(1)
+        time.sleep(10)

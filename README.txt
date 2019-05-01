@@ -1,1 +1,1 @@
-This is an add-on powered by the Splunk Add-on Builder.
+This is an addon that was built using the Splunk Add-on Builder.

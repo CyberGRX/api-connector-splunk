@@ -1,367 +1,367 @@
 {
     "pages": {
-        "configuration": {
-            "tabs": [
-                {
-                    "name": "logging", 
-                    "entity": [
-                        {
-                            "type": "singleSelect", 
-                            "label": "Log level", 
-                            "options": {
-                                "disableSearch": true, 
-                                "autoCompleteFields": [
-                                    {
-                                        "value": "DEBUG", 
-                                        "label": "DEBUG"
-                                    }, 
-                                    {
-                                        "value": "INFO", 
-                                        "label": "INFO"
-                                    }, 
-                                    {
-                                        "value": "WARNING", 
-                                        "label": "WARNING"
-                                    }, 
-                                    {
-                                        "value": "ERROR", 
-                                        "label": "ERROR"
-                                    }, 
-                                    {
-                                        "value": "CRITICAL", 
-                                        "label": "CRITICAL"
-                                    }
-                                ]
-                            }, 
-                            "defaultValue": "INFO", 
-                            "field": "loglevel"
-                        }
-                    ], 
-                    "title": "Logging"
-                }, 
-                {
-                    "name": "additional_parameters", 
-                    "entity": [
-                        {
-                            "help": "", 
-                            "required": false, 
-                            "type": "text", 
-                            "label": "CyberGRX API", 
-                            "validators": [
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Max length of text input is 8192", 
-                                    "minLength": 0, 
-                                    "maxLength": 8192
-                                }
-                            ], 
-                            "defaultValue": "https://api.cybergrx.com", 
-                            "field": "cybergrx_api"
-                        }
-                    ], 
-                    "title": "Add-on Settings"
-                }
-            ], 
-            "title": "Configuration", 
-            "description": "Set up your add-on"
-        }, 
         "inputs": {
-            "services": [
-                {
-                    "name": "thirdparty_cybergrx", 
-                    "entity": [
-                        {
-                            "help": "Enter a unique name for the data input", 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "Name", 
-                            "validators": [
-                                {
-                                    "type": "regex", 
-                                    "errorMsg": "Input Name must start with a letter and followed by alphabetic letters, digits or underscores.", 
-                                    "pattern": "^[a-zA-Z]\\w*$"
-                                }, 
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Length of input name should be between 1 and 100", 
-                                    "minLength": 1, 
-                                    "maxLength": 100
-                                }
-                            ], 
-                            "field": "name"
-                        }, 
-                        {
-                            "help": "Time interval of input in seconds.", 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "Interval", 
-                            "validators": [
-                                {
-                                    "type": "regex", 
-                                    "errorMsg": "Interval must be an integer.", 
-                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$"
-                                }
-                            ], 
-                            "field": "interval"
-                        }, 
-                        {
-                            "validators": [
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Length of index name should be between 1 and 80.", 
-                                    "minLength": 1, 
-                                    "maxLength": 80
-                                }
-                            ], 
-                            "required": true, 
-                            "type": "singleSelect", 
-                            "label": "Index", 
-                            "field": "index", 
-                            "defaultValue": "default", 
-                            "options": {
-                                "endpointUrl": "data/indexes", 
-                                "blackList": "^_.*$", 
-                                "createSearchChoice": true
-                            }
-                        }, 
-                        {
-                            "help": "", 
-                            "options": {
-                                "placeholder": "CyberGRX API Token"
-                            }, 
-                            "validators": [
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Max length of password is 8192", 
-                                    "minLength": 0, 
-                                    "maxLength": 8192
-                                }
-                            ], 
-                            "required": false, 
-                            "type": "text", 
-                            "label": "API Token", 
-                            "field": "api_token", 
-                            "encrypted": true
-                        }
-                    ], 
-                    "title": "ThirdParty_CyberGRX"
-                }, 
-                {
-                    "name": "gapsandremediations_cybergrx", 
-                    "entity": [
-                        {
-                            "help": "Enter a unique name for the data input", 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "Name", 
-                            "validators": [
-                                {
-                                    "type": "regex", 
-                                    "errorMsg": "Input Name must start with a letter and followed by alphabetic letters, digits or underscores.", 
-                                    "pattern": "^[a-zA-Z]\\w*$"
-                                }, 
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Length of input name should be between 1 and 100", 
-                                    "minLength": 1, 
-                                    "maxLength": 100
-                                }
-                            ], 
-                            "field": "name"
-                        }, 
-                        {
-                            "help": "Time interval of input in seconds.", 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "Interval", 
-                            "validators": [
-                                {
-                                    "type": "regex", 
-                                    "errorMsg": "Interval must be an integer.", 
-                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$"
-                                }
-                            ], 
-                            "field": "interval"
-                        }, 
-                        {
-                            "validators": [
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Length of index name should be between 1 and 80.", 
-                                    "minLength": 1, 
-                                    "maxLength": 80
-                                }
-                            ], 
-                            "required": true, 
-                            "type": "singleSelect", 
-                            "label": "Index", 
-                            "field": "index", 
-                            "defaultValue": "default", 
-                            "options": {
-                                "endpointUrl": "data/indexes", 
-                                "blackList": "^_.*$", 
-                                "createSearchChoice": true
-                            }
-                        }, 
-                        {
-                            "help": "", 
-                            "options": {
-                                "placeholder": "CyberGRX API Token"
-                            }, 
-                            "validators": [
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Max length of password is 8192", 
-                                    "minLength": 0, 
-                                    "maxLength": 8192
-                                }
-                            ], 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "API Token", 
-                            "field": "api_token", 
-                            "encrypted": true
-                        }
-                    ], 
-                    "title": "GapsAndRemediations_CyberGRX"
-                }, 
-                {
-                    "name": "assessmentscore_grx", 
-                    "entity": [
-                        {
-                            "help": "Enter a unique name for the data input", 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "Name", 
-                            "validators": [
-                                {
-                                    "type": "regex", 
-                                    "errorMsg": "Input Name must start with a letter and followed by alphabetic letters, digits or underscores.", 
-                                    "pattern": "^[a-zA-Z]\\w*$"
-                                }, 
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Length of input name should be between 1 and 100", 
-                                    "minLength": 1, 
-                                    "maxLength": 100
-                                }
-                            ], 
-                            "field": "name"
-                        }, 
-                        {
-                            "help": "Time interval of input in seconds.", 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "Interval", 
-                            "validators": [
-                                {
-                                    "type": "regex", 
-                                    "errorMsg": "Interval must be an integer.", 
-                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$"
-                                }
-                            ], 
-                            "field": "interval"
-                        }, 
-                        {
-                            "validators": [
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Length of index name should be between 1 and 80.", 
-                                    "minLength": 1, 
-                                    "maxLength": 80
-                                }
-                            ], 
-                            "required": true, 
-                            "type": "singleSelect", 
-                            "label": "Index", 
-                            "field": "index", 
-                            "defaultValue": "default", 
-                            "options": {
-                                "endpointUrl": "data/indexes", 
-                                "blackList": "^_.*$", 
-                                "createSearchChoice": true
-                            }
-                        }, 
-                        {
-                            "help": "", 
-                            "options": {
-                                "placeholder": "CyberGRX API Token"
-                            }, 
-                            "validators": [
-                                {
-                                    "type": "string", 
-                                    "errorMsg": "Max length of password is 8192", 
-                                    "minLength": 0, 
-                                    "maxLength": 8192
-                                }
-                            ], 
-                            "required": true, 
-                            "type": "text", 
-                            "label": "API Token", 
-                            "field": "api_token", 
-                            "encrypted": true
-                        }
-                    ], 
-                    "title": "AssessmentScore_GRX"
-                }
-            ], 
-            "title": "Inputs", 
-            "description": "Manage your data inputs", 
             "table": {
+                "moreInfo": [
+                    {
+                        "field": "name", 
+                        "label": "Name"
+                    }, 
+                    {
+                        "field": "interval", 
+                        "label": "Interval"
+                    }, 
+                    {
+                        "field": "index", 
+                        "label": "Index"
+                    }, 
+                    {
+                        "field": "disabled", 
+                        "label": "Status"
+                    }, 
+                    {
+                        "field": "api_token", 
+                        "label": "API Token"
+                    }
+                ], 
+                "header": [
+                    {
+                        "field": "name", 
+                        "label": "Name"
+                    }, 
+                    {
+                        "field": "interval", 
+                        "label": "Interval"
+                    }, 
+                    {
+                        "field": "index", 
+                        "label": "Index"
+                    }, 
+                    {
+                        "field": "disabled", 
+                        "label": "Status"
+                    }
+                ], 
                 "actions": [
                     "edit", 
                     "enable", 
                     "delete", 
                     "clone"
-                ], 
-                "header": [
-                    {
-                        "label": "Name", 
-                        "field": "name"
-                    }, 
-                    {
-                        "label": "Interval", 
-                        "field": "interval"
-                    }, 
-                    {
-                        "label": "Index", 
-                        "field": "index"
-                    }, 
-                    {
-                        "label": "Status", 
-                        "field": "disabled"
-                    }
-                ], 
-                "moreInfo": [
-                    {
-                        "label": "Name", 
-                        "field": "name"
-                    }, 
-                    {
-                        "label": "Interval", 
-                        "field": "interval"
-                    }, 
-                    {
-                        "label": "Index", 
-                        "field": "index"
-                    }, 
-                    {
-                        "label": "Status", 
-                        "field": "disabled"
-                    }, 
-                    {
-                        "label": "API Token", 
-                        "field": "api_token"
-                    }
                 ]
-            }
+            }, 
+            "description": "Manage your data inputs", 
+            "title": "Inputs", 
+            "services": [
+                {
+                    "entity": [
+                        {
+                            "required": true, 
+                            "help": "Enter a unique name for the data input", 
+                            "field": "name", 
+                            "validators": [
+                                {
+                                    "pattern": "^[a-zA-Z]\\w*$", 
+                                    "errorMsg": "Input Name must start with a letter and followed by alphabetic letters, digits or underscores.", 
+                                    "type": "regex"
+                                }, 
+                                {
+                                    "maxLength": 100, 
+                                    "minLength": 1, 
+                                    "errorMsg": "Length of input name should be between 1 and 100", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "Name", 
+                            "type": "text"
+                        }, 
+                        {
+                            "required": true, 
+                            "help": "Time interval of input in seconds.", 
+                            "field": "interval", 
+                            "validators": [
+                                {
+                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$", 
+                                    "errorMsg": "Interval must be an integer.", 
+                                    "type": "regex"
+                                }
+                            ], 
+                            "label": "Interval", 
+                            "type": "text"
+                        }, 
+                        {
+                            "required": true, 
+                            "options": {
+                                "createSearchChoice": true, 
+                                "blackList": "^_.*$", 
+                                "endpointUrl": "data/indexes"
+                            }, 
+                            "field": "index", 
+                            "defaultValue": "default", 
+                            "validators": [
+                                {
+                                    "maxLength": 80, 
+                                    "minLength": 1, 
+                                    "errorMsg": "Length of index name should be between 1 and 80.", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "Index", 
+                            "type": "singleSelect"
+                        }, 
+                        {
+                            "required": false, 
+                            "encrypted": true, 
+                            "options": {
+                                "placeholder": "CyberGRX API Token"
+                            }, 
+                            "help": "", 
+                            "field": "api_token", 
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "minLength": 0, 
+                                    "errorMsg": "Max length of password is 8192", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "API Token", 
+                            "type": "text"
+                        }
+                    ], 
+                    "title": "ThirdParty_CyberGRX", 
+                    "name": "thirdparty_cybergrx"
+                }, 
+                {
+                    "entity": [
+                        {
+                            "required": true, 
+                            "help": "Enter a unique name for the data input", 
+                            "field": "name", 
+                            "validators": [
+                                {
+                                    "pattern": "^[a-zA-Z]\\w*$", 
+                                    "errorMsg": "Input Name must start with a letter and followed by alphabetic letters, digits or underscores.", 
+                                    "type": "regex"
+                                }, 
+                                {
+                                    "maxLength": 100, 
+                                    "minLength": 1, 
+                                    "errorMsg": "Length of input name should be between 1 and 100", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "Name", 
+                            "type": "text"
+                        }, 
+                        {
+                            "required": true, 
+                            "help": "Time interval of input in seconds.", 
+                            "field": "interval", 
+                            "validators": [
+                                {
+                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$", 
+                                    "errorMsg": "Interval must be an integer.", 
+                                    "type": "regex"
+                                }
+                            ], 
+                            "label": "Interval", 
+                            "type": "text"
+                        }, 
+                        {
+                            "required": true, 
+                            "options": {
+                                "createSearchChoice": true, 
+                                "blackList": "^_.*$", 
+                                "endpointUrl": "data/indexes"
+                            }, 
+                            "field": "index", 
+                            "defaultValue": "default", 
+                            "validators": [
+                                {
+                                    "maxLength": 80, 
+                                    "minLength": 1, 
+                                    "errorMsg": "Length of index name should be between 1 and 80.", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "Index", 
+                            "type": "singleSelect"
+                        }, 
+                        {
+                            "required": true, 
+                            "encrypted": true, 
+                            "options": {
+                                "placeholder": "CyberGRX API Token"
+                            }, 
+                            "help": "", 
+                            "field": "api_token", 
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "minLength": 0, 
+                                    "errorMsg": "Max length of password is 8192", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "API Token", 
+                            "type": "text"
+                        }
+                    ], 
+                    "title": "AssessmentScore_GRX", 
+                    "name": "assessmentscore_grx"
+                }, 
+                {
+                    "entity": [
+                        {
+                            "required": true, 
+                            "help": "Enter a unique name for the data input", 
+                            "field": "name", 
+                            "validators": [
+                                {
+                                    "pattern": "^[a-zA-Z]\\w*$", 
+                                    "errorMsg": "Input Name must start with a letter and followed by alphabetic letters, digits or underscores.", 
+                                    "type": "regex"
+                                }, 
+                                {
+                                    "maxLength": 100, 
+                                    "minLength": 1, 
+                                    "errorMsg": "Length of input name should be between 1 and 100", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "Name", 
+                            "type": "text"
+                        }, 
+                        {
+                            "required": true, 
+                            "help": "Time interval of input in seconds.", 
+                            "field": "interval", 
+                            "validators": [
+                                {
+                                    "pattern": "^\\-[1-9]\\d*$|^\\d*$", 
+                                    "errorMsg": "Interval must be an integer.", 
+                                    "type": "regex"
+                                }
+                            ], 
+                            "label": "Interval", 
+                            "type": "text"
+                        }, 
+                        {
+                            "required": true, 
+                            "options": {
+                                "createSearchChoice": true, 
+                                "blackList": "^_.*$", 
+                                "endpointUrl": "data/indexes"
+                            }, 
+                            "field": "index", 
+                            "defaultValue": "default", 
+                            "validators": [
+                                {
+                                    "maxLength": 80, 
+                                    "minLength": 1, 
+                                    "errorMsg": "Length of index name should be between 1 and 80.", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "Index", 
+                            "type": "singleSelect"
+                        }, 
+                        {
+                            "required": true, 
+                            "encrypted": true, 
+                            "options": {
+                                "placeholder": "CyberGRX API Token"
+                            }, 
+                            "help": "", 
+                            "field": "api_token", 
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "minLength": 0, 
+                                    "errorMsg": "Max length of password is 8192", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "API Token", 
+                            "type": "text"
+                        }
+                    ], 
+                    "title": "GapsAndRemediations_CyberGRX", 
+                    "name": "gapsandremediations_cybergrx"
+                }
+            ]
+        }, 
+        "configuration": {
+            "description": "Set up your add-on", 
+            "title": "Configuration", 
+            "tabs": [
+                {
+                    "entity": [
+                        {
+                            "field": "loglevel", 
+                            "options": {
+                                "autoCompleteFields": [
+                                    {
+                                        "label": "DEBUG", 
+                                        "value": "DEBUG"
+                                    }, 
+                                    {
+                                        "label": "INFO", 
+                                        "value": "INFO"
+                                    }, 
+                                    {
+                                        "label": "WARNING", 
+                                        "value": "WARNING"
+                                    }, 
+                                    {
+                                        "label": "ERROR", 
+                                        "value": "ERROR"
+                                    }, 
+                                    {
+                                        "label": "CRITICAL", 
+                                        "value": "CRITICAL"
+                                    }
+                                ], 
+                                "disableSearch": true
+                            }, 
+                            "defaultValue": "INFO", 
+                            "label": "Log level", 
+                            "type": "singleSelect"
+                        }
+                    ], 
+                    "title": "Logging", 
+                    "name": "logging"
+                }, 
+                {
+                    "entity": [
+                        {
+                            "required": false, 
+                            "help": "", 
+                            "field": "cybergrx_api", 
+                            "defaultValue": "https://api.cybergrx.com", 
+                            "validators": [
+                                {
+                                    "maxLength": 8192, 
+                                    "minLength": 0, 
+                                    "errorMsg": "Max length of text input is 8192", 
+                                    "type": "string"
+                                }
+                            ], 
+                            "label": "CyberGRX API", 
+                            "type": "text"
+                        }
+                    ], 
+                    "title": "Add-on Settings", 
+                    "name": "additional_parameters"
+                }
+            ]
         }
     }, 
     "meta": {
-        "name": "api-connector-splunk", 
+        "displayName": "CyberGRX", 
+        "version": "1.0.2", 
         "restRoot": "api_connector_splunk", 
-        "apiVersion": "3.0.0", 
-        "version": "1.0.1", 
-        "displayName": "CyberGRX"
+        "name": "api-connector-splunk", 
+        "apiVersion": "3.0.0"
     }
 }

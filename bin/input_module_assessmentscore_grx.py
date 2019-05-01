@@ -84,5 +84,7 @@ def collect_events(helper, ew):
             for group in report_json.get("group_scores", []):
                 group['id'] = group['number']
                 emit_score(group, company)
+                
+            time.sleep(5)
             
-        time.sleep(1)
+        time.sleep(10)
