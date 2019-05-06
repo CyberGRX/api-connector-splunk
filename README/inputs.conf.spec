@@ -1,8 +1,8 @@
-[thirdparty_cybergrx://<name>]
-api_token = 
+[cybergrx_thirdparty://<name>]
+api_token = Configure a CyberGRX API token from the User Management console
 
-[assessmentscore_grx://<name>]
-api_token = 
+[cybergrx_gapsandremediations://<name>]
+api_token = Configure a CyberGRX API token from the User Management console.
 
-[gapsandremediations_cybergrx://<name>]
-api_token =
+[cybergrx_score://<name>]
+api_token = Configure a CyberGRX API token from the User Management console.

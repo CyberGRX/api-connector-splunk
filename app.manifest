@@ -1,53 +1,50 @@
 {
-  "schemaVersion": "1.0.0",
-  "info": {
-    "title": "CyberGRX",
-    "id": {
-      "group": null,
-      "name": "api-connector-splunk",
-      "version": "1.0.2"
+    "dependencies": {},
+    "incompatibleApps": {},
+    "info": {
+        "author": [
+            {
+                "company": "CyberGRX",
+                "email": "dean.kooiman@cybergrx.com",
+                "name": "Dean Kooiman"
+            }
+        ],
+        "classification": {
+            "categories": [],
+            "developmentStatus": null,
+            "intendedAudience": null
+        },
+        "commonInformationModels": null,
+        "description": "Third party cyber security risk management.",
+        "id": {
+            "group": null,
+            "name": "api-connector-splunk",
+            "version": "1.0.3"
+        },
+        "license": {
+            "name": "MIT",
+            "text": null,
+            "uri": "https://github.com/CyberGRX/api-connector-splunk/blob/master/LICENSE"
+        },
+        "privacyPolicy": {
+            "name": null,
+            "text": null,
+            "uri": null
+        },
+        "releaseDate": null,
+        "releaseNotes": {
+            "name": null,
+            "text": null,
+            "uri": null
+        },
+        "title": "CyberGRX"
     },
-    "author": [
-      {
-        "name": "Dean Kooiman",
-        "email": null,
-        "company": null
-      }
-    ],
-    "releaseDate": null,
-    "description": "Third party cyber security risk management.",
-    "classification": {
-      "intendedAudience": null,
-      "categories": [],
-      "developmentStatus": null
+    "inputGroups": {},
+    "platformRequirements": {
+        "splunk": {
+            "Enterprise": "*"
+        }
     },
-    "commonInformationModels": null,
-    "license": {
-      "name": null,
-      "text": null,
-      "uri": null
-    },
-    "privacyPolicy": {
-      "name": null,
-      "text": null,
-      "uri": null
-    },
-    "releaseNotes": {
-      "name": null,
-      "text": null,
-      "uri": null
-    }
-  },
-  "dependencies": {
-  },
-  "tasks": [],
-  "inputGroups": {
-  },
-  "incompatibleApps": {
-  },
-  "platformRequirements": {
-    "splunk": {
-      "Enterprise": "*"
-    }
-  }
+    "schemaVersion": "1.0.0",
+    "tasks": []
 }
