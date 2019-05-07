@@ -5,7 +5,7 @@
         "author": [
             {
                 "company": "CyberGRX",
-                "email": "dean.kooiman@cybergrx.com",
+                "email": "support@cybergrx.com",
                 "name": "Dean Kooiman"
             }
         ],
@@ -19,7 +19,7 @@
         "id": {
             "group": null,
             "name": "api-connector-splunk",
-            "version": "1.0.3"
+            "version": "1.1.0"
         },
         "license": {
             "name": "MIT",
