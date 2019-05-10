@@ -4,7 +4,7 @@ There are 2 steps to successful Splunk integration.
 1. Install and configure the Splunk Connector
 
 ## Install the Splunk Connector
-Download the latest release and add an addon into your splunk install.  This app has been tested against Splunk Enterprise `7.4.2`
+Download the latest release and add an addon into your splunk install.  This app has been tested against Splunk Enterprise `7.2.4`
 
 ## Configure the Splunk Connector
 Configuring the Splunk Connector is pretty straight forward.  A successful integration will require a CyberGRX API Token, so if you dont have that go get one now.
