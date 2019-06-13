@@ -28,8 +28,7 @@ def validate_input(helper, definition):
 def collect_events(helper, ew):
     helper.set_log_level("DEBUG")
 
-    global_cybergrx_api = helper.get_global_setting(
-        "cybergrx_api") or "https://api.cybergrx.com/"
+    global_cybergrx_api = helper.get_global_setting("cybergrx_api") or "https://api.cybergrx.com/"
     global_cybergrx_api = global_cybergrx_api.rstrip("/")
     opt_grx_api_token = helper.get_arg('api_token').strip()
 
@@ -45,11 +44,7 @@ def collect_events(helper, ew):
     while url:
         # The following examples send rest requests to some endpoint.
         response = helper.send_http_request(
-            global_cybergrx_api + url,
-            method,
-            headers=headers,
-            verify=True,
-            use_proxy=True)
+            global_cybergrx_api + url, method, headers=headers, verify=True, use_proxy=True)
 
         # check the response status, if the status is not sucessful, raise requests.HTTPError
         response.raise_for_status()

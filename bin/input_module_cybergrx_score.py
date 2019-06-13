@@ -28,8 +28,7 @@ def validate_input(helper, definition):
 def collect_events(helper, ew):
     helper.set_log_level("DEBUG")
 
-    global_cybergrx_api = helper.get_global_setting(
-        "cybergrx_api") or "https://api.cybergrx.com/"
+    global_cybergrx_api = helper.get_global_setting("cybergrx_api") or "https://api.cybergrx.com/"
     global_cybergrx_api = global_cybergrx_api.rstrip("/")
     opt_grx_api_token = helper.get_arg('api_token').strip()
 
@@ -44,11 +43,7 @@ def collect_events(helper, ew):
 
     while url:
         response = helper.send_http_request(
-            global_cybergrx_api + url,
-            method,
-            headers=headers,
-            verify=True,
-            use_proxy=True)
+            global_cybergrx_api + url, method, headers=headers, verify=True, use_proxy=True)
 
         # check the response status, if the status is not sucessful, raise requests.HTTPError
         response.raise_for_status()
@@ -61,21 +56,17 @@ def collect_events(helper, ew):
             if not residual_risk:
                 continue
 
-            report_uri = residual_risk[0].get("residual_risk_uri", None)
-            if not report_uri:
+            scores_uri = residual_risk[0].get("scores_uri", None)
+            if not scores_uri:
                 continue
 
             report_response = helper.send_http_request(
-                global_cybergrx_api + report_uri,
-                method,
-                headers=headers,
-                verify=True,
-                use_proxy=True)
+                global_cybergrx_api + scores_uri, method, headers=headers, verify=True, use_proxy=True)
 
             # check the response status, if the status is not sucessful, raise requests.HTTPError
             report_response.raise_for_status()
 
-            report_json = report_response.json()
+            score_json = report_response.json()
 
             def emit_score(score, company):
                 score["question_id"] = score["id"]
@@ -90,15 +81,12 @@ def collect_events(helper, ew):
                     data=json.dumps(score))
                 ew.write_event(event)
 
-            for answer in report_json.get("no_answers", []):
-                emit_score(answer, company)
+            for score in score_json.get("group_scores", []):
+                score['id'] = score['number']
+                emit_score(score, company)
 
-            for answer in report_json.get("na_answers", []):
-                emit_score(answer, company)
-
-            for group in report_json.get("group_scores", []):
-                group['id'] = group['number']
-                emit_score(group, company)
+            for score in score_json.get("control_scores", []):
+                emit_score(score, company)
 
             time.sleep(5)
 

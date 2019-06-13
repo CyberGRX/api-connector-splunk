@@ -12,7 +12,7 @@ build:
 	cd ../ && rm -f api-connector-splunk-$(VERSION).spl
 	cd ../ && rm -f api-connector-splunk-$(VERSION).spl.sha
 
-	cd ../ && tar --exclude='.git' --exclude='docs' --exclude='README.md' --exclude='HOW-TO.md' --exclude='VERSION' --exclude='LICENSE' --exclude='Makefile' --exclude='.editorconfig' --exclude='.pre-commit-config.yaml' -zcvf api-connector-splunk-$(VERSION).tgz api-connector-splunk
+	cd ../ && tar --exclude='.git' --exclude='docs' --exclude='README.md' --exclude='HOW-TO.md' --exclude='VERSION' --exclude='LICENSE' --exclude='Makefile' --exclude='.editorconfig' --exclude='.pre-commit-config.yaml' --exclude='setup.cfg' -zcvf api-connector-splunk-$(VERSION).tgz api-connector-splunk
 	cd ../ && shasum -a 256 api-connector-splunk-$(VERSION).tgz > api-connector-splunk-$(VERSION).tgz.sha
 	rm README.txt
 
