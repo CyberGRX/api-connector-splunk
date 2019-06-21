@@ -1,6 +1,6 @@
 # CyberGRX Splunk API Connector
 
-If you are taking a look at configuring the CyberGRX Splunk Connector, please take a look at the [Install Guide (How To)](./HOW-TO.md).
+This splunk-app is available for direct install from [Splunkbase](https://splunkbase.splunk.com/app/4487/).  If you are trying to configure the CyberGRX Splunk Connector, please take a look at the [Install Guide (How To)](./HOW-TO.md).
 
 **Please Note** this connector has been formally tested against Splunk Enterprise version `7.2.4`.
 
